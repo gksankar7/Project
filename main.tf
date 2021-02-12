@@ -1,8 +1,4 @@
 variable "project_name" {}
-variable "billing_account" {}
-variable "org_id" {}
-variable "region" {}
-
 provider "google" {
   region = var.region
 }
@@ -17,17 +13,6 @@ resource "google_project" "project" {
   project_id      = random_id.id.hex
   billing_account = var.billing_account
   org_id          = var.org_id
-}
-
-resource "google_project_service" "service" {
-  for_each = toset([
-    "compute.googleapis.com"
-  ])
-
-  service = each.key
-
-  project            = google_project.project.project_id
-  disable_on_destroy = false
 }
 
 output "project_id" {
