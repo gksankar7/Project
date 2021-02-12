@@ -6,7 +6,4 @@ names = [
     "dh-gcp-infra-networking-stag"
     "dh-gcp-infra-operations"
     "dh-gcp-infra-billing"
-    "dh-gcp-component-ads-prod"
-    "dh-gcp-component-ads-qa"
-    "dh-gcp-component-ads-stag"
   ]
