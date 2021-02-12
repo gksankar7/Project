@@ -21,3 +21,10 @@ provider "google" {
 
 module "projects" {
   source = "../../modules/terraform-google-projects"
+  
+parent            = "${var.parent_type}/${var.parent_id}"
+names             = var.names
+set_roles         = true
+per_folder_admins = var.per_projects_admins
+all_folder_admins = var.all_projects_admins
+}
