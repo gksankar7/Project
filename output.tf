@@ -15,6 +15,11 @@
  */
 
 output "project_id" {
-  value = google_project.project.project_id
   description = "project id"
+  value = module.project.project_id
+}
+
+ output "names" {
+  description = "project names."
+  value       = module.projects.names
 }
