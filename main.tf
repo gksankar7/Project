@@ -21,14 +21,3 @@ provider "google" {
 
 module "projects" {
   source = "../../modules/terraform-google-projects"
-
-resource "random_id" "id" {
-  byte_length = 4
-  prefix      = var.project_name
-}
-
-resource "google_project" "project" {
-  name            = var.project_name
-  project_id      = random_id.id.hex
-  org_id          = var.org_id
-}
